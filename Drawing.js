@@ -22,7 +22,6 @@ let downloadDrawing;
 let addAnimal = false;
 let addVegetation = false;
 let addTree = false;
-let addSurprise = false;
 
 //upload illustrations
 function preload(){
