@@ -1,16 +1,35 @@
-function preload() {
-	// put preload code here
-}
+let start;
+let instructions;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	// put setup code here
-	const message = "This is a template reposotory\nfor the course elective Creative Coding\nCommunication Design, Politecnico di Milano";
-	textAlign(CENTER, CENTER);
-  textSize(16)
-	text(message, width/2, height/2);
+  createCanvas(displayWidth, displayHeight);
+
+  //create a button that allow to go to the other sketch
+  start = createButton("Start");
+  start.mousePressed(changePage);
+  start.size(100, 35);
+  start.style("background-color", "#ef8e34");
+  start.style("border-radius", "10px");
+  start.style("border", "0px");
+  start.position(windowWidth / 2 - 50, 600);
+  start.style("font-family", "Rubik Bubbles");
+  start.style("font-size", "18px");
+  start.style("color", "#603912");
+} 
+
+function changePage(){
+  window.open("Drawing.html", "_self");
 }
 
-function draw() {
-	// put drawing code here
+function draw(){
+
+  background("#603912");
+  textFont("Rubik Bubbles");
+  fill("#fdb515");
+  textSize(28);
+  instructions = "Hello! Welcome into the woods! Your task is to draw your own woods by adding elements. Do you want the rain? Shake your phone! With the surprise button you can also capture the element that you want to add to your drawing.";
+  textAlign(CENTER, CENTER);
+  rectMode(CENTER);
+  text(instructions, windowWidth / 2, windowHeight / 2, 350, 300);
+
 }
