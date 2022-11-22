@@ -26,8 +26,8 @@ function draw(){
   background("#603912");
   textFont("Rubik Bubbles");
   fill("#fdb515");
-  textSize(28);
-  instructions = "Hello! Welcome into the woods! Your task is to draw your own woods by adding elements. Do you want the rain? Shake your phone! With the surprise button you can also capture the element that you want to add to your drawing.";
+  textSize(32);
+  instructions = "Hello! Welcome into the woods! Your task is to draw your own woods by adding elements. Do you want the rain? Shake your phone!";
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   text(instructions, windowWidth / 2, windowHeight / 2, 350, 300);
