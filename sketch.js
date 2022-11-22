@@ -27,7 +27,7 @@ function draw(){
   textFont("Rubik Bubbles");
   fill("#fdb515");
   textSize(32);
-  instructions = "Hello! Welcome into the woods! Your task is to draw your own woods by adding elements. See what happen if you shake your phone!";
+  instructions = "Hello! Welcome into the woods! Your task is to draw your own woods by adding elements. Watch what happens if you shake your phone!";
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   text(instructions, windowWidth / 2, windowHeight / 2, 350, 300);
