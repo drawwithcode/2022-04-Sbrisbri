@@ -18,15 +18,11 @@ let buttonAnimals;
 let buttonTrees;
 let buttonGoBack;
 let buttonSave;
-let buttonSurprise;
 let downloadDrawing;
-let woodSound;
-let rainSound;
 let addAnimal = false;
 let addVegetation = false;
 let addTree = false;
 let addSurprise = false;
-let capture;
 
 //upload illustrations
 function preload(){
@@ -53,18 +49,6 @@ function setup() {
 
 createCanvas(windowWidth,windowHeight);
 imageMode(CENTER);
-
-//set the camera on the device
-let constraints = {
-  audio : false,
-  video: {
-    facingMode: {
-      exact: "environment"
-    }
-  }
-}
-capture = createCapture(constraints);
-capture.hide();
 
 //slider day/night
 bw1 = createSlider(0, 100, 0);
@@ -132,35 +116,13 @@ buttonSave.style("padding", "6px 10px");
 buttonSave.position(windowWidth / 2 - 40, 668);
 buttonSave.touchStarted(saveDrawing);
 
-//add surprise element by clicking on this button
-buttonSurprise = createButton("Surprise");
-buttonSurprise.style("font-family", "Rubik Bubbles");
-buttonSurprise.style("color", "white");
-buttonSurprise.style("background-color", "#fdb515");
-buttonSurprise.style("border-radius", "10px");
-buttonSurprise.style("border", "0px");
-buttonSurprise.style("padding", "6px 10px");
-buttonSurprise.position(windowWidth / 2 + 100, 668);
-buttonSurprise.touchStarted(addYourOwnElement);
-
 }
-
-//open the camera by clicking on the button
-function addYourOwnElement(){
-  addSurprise = true;
-  addAnimal = false;
-  addVegetation = false;
-  addTree = false;
-  imageMode(CENTER);
-  image(capture, windowWidth / 2, 600, 150, 100);
-}  
 
 //add animal
 function animalstarted(){
   addAnimal = true;
   addTree = false;
   addVegetation = false;
-  addSurprise = false;
 }
 
 //add trees
@@ -168,7 +130,6 @@ function treestarted(){
   addTree = true;
   addAnimal = false;
   addVegetation = false;
-  addSurprise = false;
 }
 
 //add vegetation
@@ -176,7 +137,6 @@ function vegetationstarted(){
   addVegetation = true;
   addTree = false;
   addAnimal = false;
-  addSurprise = false;
 }
 
 //download your drawing
@@ -289,9 +249,6 @@ for(let h = 0; h < rain.length; h++){
   rain[h].move();
 }
 
-if (addSurprise == true){
-  addYourOwnElement(); 
-}
 }
 
 class DrawVegetation{
